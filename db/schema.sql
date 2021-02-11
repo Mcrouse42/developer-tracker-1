@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS developer-tracker_db;
+DROP DATABASE IF EXISTS developer_tracker_db;
 
-CREATE DATABASE developer-tracker_db;
+CREATE DATABASE developer_tracker_db;
