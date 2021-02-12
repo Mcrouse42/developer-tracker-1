@@ -1,16 +1,28 @@
 <ol class="skill-block">
     <li>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Status
+        <div class="dropdown">
+            <div class="dropdown-trigger">
+                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                    <span>Status</span>
+                    <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="statusD">
-                    <button class="dropdown-item" id="tbl" type="button">To Be Learned</button>
-                    <button class="dropdown-item" id="ip" type="button">In Progress</button>
-                    <button class="dropdown-item" id="mastered" type="button">Mastered</button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                        To Be learned
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        In Progress
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        Mastered
+                    </a>
                 </div>
             </div>
+        </div>
             <div class="meta">
                 {{skills}} by {{user.username}}
                 |
