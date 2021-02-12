@@ -20,12 +20,9 @@ Skills.init(
                 len: [1]
             }
         },
-        status_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'status',
-                key: 'id'
-            }
+        status: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {
