@@ -1,1 +1,12 @@
-<div>You are on the homepage</div>
+<ol class="skill-block">
+    <li>
+            <div class="status">
+                {{!-- make dropdown for status choices --}}
+            </div>
+            <div class="meta">
+                {{skills}} skill by {{user.username}}
+                |
+                <a href="/post/{{id}}">{{skill.length}} skill</a>
+            </div>
+    </li>
+</ol>
