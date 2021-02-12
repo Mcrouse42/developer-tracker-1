@@ -25,3 +25,5 @@ Status.init(
         modelName: 'status'
     }
 );
+
+module.exports = Status;
