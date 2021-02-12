@@ -1,12 +1,21 @@
 <ol class="skill-block">
     <li>
-            <div class="status">
-                {{!-- make dropdown for status choices --}}
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Status
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2" id="statusD">
+                    <button class="dropdown-item" id="tbl" type="button">To Be Learned</button>
+                    <button class="dropdown-item" id="ip" type="button">In Progress</button>
+                    <button class="dropdown-item" id="mastered" type="button">Mastered</button>
+                </div>
             </div>
             <div class="meta">
-                {{skills}} skill by {{user.username}}
+                {{skills}} by {{user.username}}
                 |
-                <a href="/post/{{id}}">{{skill.length}} skill</a>
+                <a href="/skills/{{id}}">{{skill.length}}</a>
             </div>
     </li>
+    <script src="/javascript/status.js"></script>
 </ol>
