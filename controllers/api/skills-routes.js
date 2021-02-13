@@ -1,13 +1,11 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Skills } = require('../../models');
+const { Skills } = require('../../models/');
 const withAuth = require('../../utils/auth');
 const { post } = require('./user-routes');
 
-
-
 // get all skills
-router.get('/', (req, res) => {
+router.get('/skill', (req, res) => {
     Skills.findAll()
     .then(dbSkillsData => res.json(dbSkillsData))
     .catch(err => {
@@ -39,3 +37,6 @@ router.post('/', (req, res) => {
 
 
 // delete skill
+
+
+module.exports = router;

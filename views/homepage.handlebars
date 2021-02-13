@@ -23,126 +23,130 @@
                 </div>
             </div>
         </div>
-    <div>
-        <br>
-        <br>
-        <br>
-        {{!-- Card section, not sure if it will work?
-         </div>
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        To Be Learned
-                    </p>
-                    <button class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                    </button>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                        <div>
-                            <textarea class="textarea is-danger" placeholder=""></textarea>
-                        </div>
-                        <time datetime=></time>
+        <div>
+            <br>
+            <br>
+            <br>
+            {{!-- Card section, not sure if it will work?
+        </div>
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    To Be Learned
+                </p>
+                <button class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    <div>
+                        <textarea class="textarea is-danger" placeholder=""></textarea>
                     </div>
+                    <time datetime=></time>
                 </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-footer-item">Change to In Progress</a>
-                    <a href="#" class="card-footer-item">Save</a>
-                    <a href="#" class="card-footer-item">Edit</a>
-                    <a href="#" class="card-footer-item">Delete</a>
-                </footer>
+            </div>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item">Change to In Progress</a>
+                <a href="#" class="card-footer-item">Save</a>
+                <a href="#" class="card-footer-item">Edit</a>
+                <a href="#" class="card-footer-item">Delete</a>
+            </footer>
+        </div>
+        <div>
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    In Progress
+                </p>
+                <button class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    <div>
+                        <textarea class="textarea is-danger" placeholder=""></textarea>
+                    </div>
+                    <time datetime=></time>
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item">Change to Mastered</a>
+                <a href="#" class="card-footer-item">Save</a>
+                <a href="#" class="card-footer-item">Edit</a>
+                <a href="#" class="card-footer-item">Delete</a>
+            </footer>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    Mastered
+                </p>
+                <button class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    <div>
+                        <textarea class="textarea is-danger" placeholder="Danger textarea"></textarea>
+                    </div>
+                    <time datetime=></time>
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item">Congratulations! Don't change a thing.</a>
+                <a href="#" class="card-footer-item">Edit</a>
+                <a href="#" class="card-footer-item">Delete</a>
+            </footer>
+        </div> --}}
+        {{!-- Might need to use columns instead? --}}
+        <div class="columns">
+            <div class="column is-narrow-mobile">
+                <h1 class="title">Enter Skill To Begin Your Journey!</h1>
+                <form class="box">
+                    <div class="field">
+                        <label class="label is-centered"></label>
+                        <div class="control">
+                            <input class="input" type="text" placeholder="">
+                        </div>
+                    </div>
             </div>
             <div>
-            <br>
-            <br>
-            <br>
+                <br>
+                <br>
             </div>
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        In Progress
-                    </p>
-                    <button class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                    </button>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                        <div>
-                            <textarea class="textarea is-danger" placeholder=""></textarea>
-                        </div>
-                        <time datetime=></time>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-footer-item">Change to Mastered</a>
-                    <a href="#" class="card-footer-item">Save</a>
-                    <a href="#" class="card-footer-item">Edit</a>
-                    <a href="#" class="card-footer-item">Delete</a>
-                </footer>
+            <div class="column is-narrow-mobile">
+                <h1 class="title">To Be Learned</h1>
+                {{#each skills}}
+                {{title}}
+                {{/each}}
+
+
             </div>
-            <br>
-            <br>
-            <br>
-            <div class="card">
-                <header class="card-header">
-                    <p class="card-header-title">
-                        Mastered
-                    </p>
-                    <button class="card-header-icon" aria-label="more options">
-                        <span class="icon">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                    </button>
-                </header>
-                <div class="card-content">
-                    <div class="content">
-                        <div>
-                            <textarea class="textarea is-danger" placeholder="Danger textarea"></textarea>
-                        </div>
-                        <time datetime=></time>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-footer-item">Congratulations! Don't change a thing.</a>
-                    <a href="#" class="card-footer-item">Edit</a>
-                    <a href="#" class="card-footer-item">Delete</a>
-                </footer>
-            </div> --}}
-    {{!-- Might need to use columns instead? --}}
-    <div class="columns">
-        <div class="column is-narrow-mobile">
-            <h1 class="title">Enter Skill To Begin Your Journey!</h1>
-            <form class="box">
-                <div class="field">
-                    <label class="label is-centered"></label>
-                    <div class="control">
-                        <input class="input" type="text" placeholder="">
-                    </div>
-                </div>
+            <div class="column is-narrow-mobile">
+                <h1 class="title">In Progress</h1>
+
             </div>
-        <div>
-        <br>
-        <br>
+            <div class="column is-narrow-mobile">
+                <h1 class="title">Mastered</h1>
+
+            </div>
         </div>
-        <div class="column is-narrow-mobile">
-            <h1 class="title">To Be Learned</h1>
-            
-        </div>
-        <div class="column is-narrow-mobile">
-            <h1 class="title">In Progress</h1>
-            
-        </div>
-        <div class="column is-narrow-mobile">
-            <h1 class="title">Mastered</h1>
-            
-        </div>
-    </div>
 
     </li>
     <script src="/javascript/status.js"></script>
