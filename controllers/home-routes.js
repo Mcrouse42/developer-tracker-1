@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User } = require('../models');
 
-
+//homepage route still needs work
 router.get("/", (req, res) => {
   res.render("homepage", {
     id: 1,
