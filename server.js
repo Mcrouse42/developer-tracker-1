@@ -30,6 +30,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+// handlebars helper
+const isEqual = function(a, b, opts) {
+  if (a == b) {
+    return opts.fn(this) 
+  } else { 
+    return opts.inverse(this) 
+  } 
+}
+
+exphbs.registerHelper('if_eq', isEqual);
+
 // turn on routes
 app.use(routes);
 

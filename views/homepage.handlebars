@@ -132,9 +132,11 @@
             </div>
             <div class="column is-narrow-mobile">
                 <h1 class="title">To Be Learned</h1>
-                {{#each skills}}
+                {{!-- {{#each skills}}
+                {{#if status.match "Mastered"}}
                 {{title}}
-                {{/each}}
+                {{/if}}
+                {{/each}} --}}
 
 
             </div>
@@ -144,6 +146,11 @@
             </div>
             <div class="column is-narrow-mobile">
                 <h1 class="title">Mastered</h1>
+                <select id={{status}}>
+                    {{#if (eq status "Mastered")}}
+                    {{title}}
+                    {{/if}}
+                </select>
 
             </div>
         </div>
