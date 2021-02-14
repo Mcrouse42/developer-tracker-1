@@ -42,6 +42,14 @@ router.post('/', (req, res) => {
     });
 });
 
+// put request - edit skill
+
+
+
+
+
+
+
 // delete skill
 // need to add withAuth as param, and if (req.session) before function
 router.delete('/skill/:id', (req, res) => {
