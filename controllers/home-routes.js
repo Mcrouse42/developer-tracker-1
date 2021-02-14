@@ -1,17 +1,21 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User } = require('../models');
+const { User, Skills  } = require('../models');
 
 //homepage route still needs work
 router.get("/", (req, res) => {
-  res.render("homepage", {
-    id: 1,
-    skills: "JavaScript ",
-    status: "In Progress ",
+  Skills.findAll()
+  .then(dbSkillsData => {
+    const data = dbSkillsData.map(skill => skill.get({ plain: true }));
+    res.render("homepage", {
+    skills: data,
     // created_at: new Date(),
-    user: {
-      username: "test_user",
-    },
+    loggedIn: req.session.loggedIn
+    });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   });
 });
 
