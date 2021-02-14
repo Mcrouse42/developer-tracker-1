@@ -111,30 +111,32 @@
                     {{/each}}
                 </div>
             </div>
-            <div class="column is-narrow-mobile">
-                <div class="box">
-                    <h1 class="title">In Progress</h1>
-                    <div class="skills">
-                        {{#each skills}}
-                        {{#ifEquals status "In Progress"}}
-                        {{> skills-info}}
-                        {{/ifEquals}}
-                        {{/each}}
-                    </div>
+        </div>
+        <div class="column is-narrow-mobile">
+            <div class="box">
+                <h1 class="title">In Progress</h1>
+                <div class="skills">
+                    {{#each skills}}
+                    {{#ifEquals status "In Progress"}}
+                    {{> skills-info}}
+                    {{/ifEquals}}
+                    {{/each}}
                 </div>
-                <div class="column is-narrow-mobile">
-                    <div class="box">
-                        <h1 class="title">Mastered</h1>
-                        <div class="skills">
-                            {{#each skills}}
-                            {{#ifEquals status "Mastered"}}
-                            {{> skills-info}}
-                            {{/ifEquals}}
-                            {{/each}}
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="column is-narrow-mobile">
+            <div class="box">
+                <h1 class="title">Mastered</h1>
+                <div class="skills">
+                    {{#each skills}}
+                    {{#ifEquals status "Mastered"}}
+                    {{> skills-info}}
+                    {{/ifEquals}}
+                    {{/each}}
                 </div>
-                {{!--
-                <script src="/javascript/status.js"></script> --}}
+            </div>
+        </div>
+        {{!--
+        <script src="/javascript/status.js"></script> --}}
 
 </ol>
