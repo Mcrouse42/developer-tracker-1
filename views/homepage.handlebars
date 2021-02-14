@@ -12,7 +12,7 @@
             <div class="dropdown-menu" id="dropdown-menu3" role="menu">
                 <div class="dropdown-content">
                     <a href="#" class="dropdown-item">
-                        To Be learned
+                        To Be Learned
                     </a>
                     <a href="#" class="dropdown-item">
                         In Progress
@@ -134,29 +134,33 @@
                 <h1 class="title">To Be Learned</h1>
                 <div class="skills">
                     {{#each skills}}
-                    <section class="skill">
-                        <div class="meta">
-                            title: {{title}}
-                            status: {{status}}
-                        </div>
-                    </section>
+                    {{#ifEquals status "To Be Learned"}}
+                    {{> skills-info}}
+                    {{/ifEquals}}
                     {{/each}}
                 </div>
 
             </div>
             <div class="column is-narrow-mobile">
                 <h1 class="title">In Progress</h1>
+                <div calss="skills">
+                    {{#each skills}}
+                    {{#ifEquals status "In Progress"}}
+                    {{> skills-info}}
+                    {{/ifEquals}}
+                    {{/each}}
+                </div>
 
             </div>
             <div class="column is-narrow-mobile">
                 <h1 class="title">Mastered</h1>
-                {{#each skills}}
-                {{#ifEquals status "Mastered"}}
-                title: {{title}}
-                status: {{status}}
-                {{/ifEquals}}
-                {{/each}}
-
+                <div class="skills">
+                    {{#each skills}}
+                    {{#ifEquals status "Mastered"}}
+                    {{> skills-info}}
+                    {{/ifEquals}}
+                    {{/each}}
+                </div>
             </div>
         </div>
 
