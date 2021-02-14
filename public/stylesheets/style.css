@@ -176,3 +176,15 @@ footer {
   padding: 1%;
   font-size: 110%;
 }
+
+/* box styling */
+
+.box {
+  border-radius: 25% 25%;
+}
+
+.box::after {
+  content: "";
+  display: block;
+  padding-bottom: 25%;
+}

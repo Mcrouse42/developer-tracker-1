@@ -89,6 +89,7 @@
         {{!-- Might need to use columns instead? --}}
         <div class="columns">
             <div class="column is-narrow-mobile">
+                <div class="box">
                 <h1 class="title">To Be Learned</h1>
                 <div class="skills">
                     {{#each skills}}
@@ -99,8 +100,9 @@
                 </div>
              </div>
             <div class="column is-narrow-mobile">
+                <div class="box">
                 <h1 class="title">In Progress</h1>
-                <div calss="skills">
+                <div class="skills">
                     {{#each skills}}
                     {{#ifEquals status "In Progress"}}
                     {{> skills-info}}
@@ -109,6 +111,7 @@
                 </div>
             </div>
             <div class="column is-narrow-mobile">
+                <div class="box">
                 <h1 class="title">Mastered</h1>
                 <div class="skills">
                     {{#each skills}}
