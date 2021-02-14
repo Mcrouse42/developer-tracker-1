@@ -42,8 +42,22 @@ router.post('/', (req, res) => {
     });
 });
 
-// put request - edit skill
-
+// put request - edit skill - maybe?
+router.put("/skill/:id", (req, res) => {
+  // make sure the session exists first
+  if (req.session) {
+    // pass session id along with all destructured properties on req.body
+    Skills.edit({
+      title: req.body.title,
+      status: req.body.status,
+    })
+      .then((dbSkillsData) => res.json(dbSkillsData))
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  }
+});
 
 
 
