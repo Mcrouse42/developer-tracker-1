@@ -3,11 +3,14 @@ const express = require('express');
 const routes = require('./controllers');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
+const Handlebars = require('handlebars');
+const HandlebarsIntl = require('handlebars-intl');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sequelize = require('./config/connection');
+const { Skills } = require('./models');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
@@ -30,16 +33,36 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// handlebars helper
-const isEqual = function(a, b, opts) {
-  if (a == b) {
-    return opts.fn(this) 
-  } else { 
-    return opts.inverse(this) 
-  } 
-}
+// handlebars helpers
+// Handlebars.registerHelper('reverseWord', function(value){
+//   var reversedWord = value.split("").reverse().join("");
+//   return reversedWord;
+// });
 
-exphbs.registerHelper('if_eq', isEqual);
+// app.get('/', function(req, res) {
+//   var data = {
+//     myWord: 'Wombat',
+//     reallyImportantNumber: 65356
+//   };
+//   res.render('homepage', data);
+// });
+
+Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
+  return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
+
+
+
+app.get('/', function(req, res) {
+  Skills.findAll()
+  .then(dbSkillsData => {
+    const data = dbSkillsData.map(skill => skill.get({ plain: true }));
+    res.render("homepage", {
+    skills: data,
+    loggedIn: req.session.loggedIn
+    });
+  })
+})
 
 // turn on routes
 app.use(routes);
