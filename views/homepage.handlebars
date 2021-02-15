@@ -89,7 +89,7 @@
     {{!-- Might need to use columns instead? --}}
     <div class="columns">
         <div class="column is-narrow-mobile">
-            <h1 class="title">Add New Skill</h1>
+            <h1 class="title has-text-weight-bold has-text-black-ter">Add New Skill</h1>
             <form class="new-skill-form">
                 <input class="input" type="text" name="skill-title" placeholder="Add New Skill">
                 <select name="status" id="status" name="status">
@@ -97,12 +97,12 @@
                     <option value="in-progress">In Progress</option>
                     <option value="mastered">Mastered</option>
                 </select></br>
-                <input type="submit" value="Add Skill" id="submit">
+                <input type="submit" value="Add Skill" id="submit" class="has-background-info-dark">
             </form>
         </div>
         <div class="column is-narrow-mobile">
-            <div class="box">
-                <h1 class="title">To Be Learned</h1>
+            <div class="box has-background-info-dark">
+                <h1 class="title has-text-weight-bold has-text-black-ter">To Be Learned</h1>
                 <div class="skills">
                     {{#each skills}}
                     {{#ifEquals status "To Be Learned"}}
@@ -113,8 +113,8 @@
             </div>
         </div>
         <div class="column is-narrow-mobile">
-            <div class="box">
-                <h1 class="title">In Progress</h1>
+            <div class="box has-background-info-dark">
+                <h1 class="title has-text-weight-bold has-text-black-ter">In Progress</h1>
                 <div class="skills">
                     {{#each skills}}
                     {{#ifEquals status "In Progress"}}
@@ -125,8 +125,8 @@
             </div>
         </div>
         <div class="column is-narrow-mobile">
-            <div class="box">
-                <h1 class="title">Mastered</h1>
+            <div class="box has-background-info-dark">
+                <h1 class="title has-text-weight-bold has-text-black-ter">Mastered</h1>
                 <div class="skills">
                     {{#each skills}}
                     {{#ifEquals status "Mastered"}}
