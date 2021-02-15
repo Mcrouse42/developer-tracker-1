@@ -68,12 +68,7 @@ router.put('/skill/:id', (req, res) => {
           res.status(500).json(err);
         });
     });
-    
-
-
-
-
-
+ 
 
 // delete skill
 // need to add withAuth as param, and if (req.session) before function
