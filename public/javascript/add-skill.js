@@ -1,5 +1,3 @@
-// form handler for adding a skill 
-// event listener
 
 async function newFormHandler(event) {
     event.preventDefault();
