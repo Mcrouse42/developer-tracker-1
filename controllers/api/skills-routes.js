@@ -91,5 +91,32 @@ router.delete('/skill/:id', (req, res) => {
     });
 });
 
+// route to edit skills
+// need to add withAuth as param, and if (req.session) before function
+router.get('/edit/:id', (req, res) => {
+    Skills.findByPk(req.params.id, {
+        attributes: [
+            'id',
+            'title',
+            'status'
+        ]
+    })
+    .then(dbSkillsData => {
+        if (dbSkillsData) {
+            const skill = dbSkillsData.get({ plain: true });
+
+            res.render('edit-skill', {
+                skill,
+                // loggedIn: true
+            });
+        } else {
+            res.status(404).end();
+        }
+    })
+    .catch(err => {
+        res.status(500).json(err);
+    });
+});
+
 
 module.exports = router;

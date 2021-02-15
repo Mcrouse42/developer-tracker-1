@@ -6,9 +6,9 @@ const { User, Skills  } = require('../models');
 router.get("/", (req, res) => {
   Skills.findAll()
   .then(dbSkillsData => {
-    const data = dbSkillsData.map(skill => skill.get({ plain: true }));
+    const skills = dbSkillsData.map(skill => skill.get({ plain: true }));
     res.render("homepage", {
-    skills: data,
+    skills,
     // created_at: new Date(),
     loggedIn: req.session.loggedIn
     });

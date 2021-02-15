@@ -2,7 +2,7 @@
 async function newFormHandler(event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="skill-title"]').value;
+    const title = document.querySelector('input[name="skill-title"]').value.trim();
     var skillStatus = document.querySelector('#status')
     const status = skillStatus.options[skillStatus.selectedIndex].text;
     
