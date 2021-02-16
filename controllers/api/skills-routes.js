@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
 });
 
 // put request - edit skill - maybe?
-router.put('/skill/:id', (req, res) => {
+router.put('/api/skill/:id', (req, res) => {
     // pass session id along with all destructured properties on req.body
       Skills.update(
           {

@@ -1,11 +1,11 @@
 <h1>Edit Skill: {{skill.title}}</h1>
 <div class="box">
     <form class="edit-skill-form">
-        <input class="input" type="text" name="skill-title" value="{{skill.title}}">
+        <input class="input" type="text" old-status={{skill.status}} name="skill-title" value="{{skill.title}}">
         <select name="skill-status" id="skill-status" name="skill-status">
-            <option value="to-be-learned">To Be Learned</option>
-            <option value="in-progress">In Progress</option>
-            <option value="mastered">Mastered</option>
+            <option id="TBL" value="2">To Be Learned</option>
+            <option id="IP" value="3">In Progress</option>
+            <option id="MA" value="1" selected="selected">Mastered</option>
         </select>
         <input type="submit" value="Update Skill" id="submit">
     </form>

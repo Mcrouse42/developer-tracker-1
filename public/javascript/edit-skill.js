@@ -1,11 +1,26 @@
 // form handler for editing a skill
 // need to work on this
 
+const status = document.querySelector("input").getAttribute("old-status");
+switch (status) {
+  case "In":
+    document.getElementById("IP").setAttribute("selected", "selected");
+    break;
+  case "To":
+    document.getElementById("TBL").setAttribute("selected", "selected");
+    break;
+  case "Mastered":
+    document.getElementById("MA").setAttribute("selected", "selected");
+    break;
+}
+
 async function editFormHandler(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="skill-title"]').value.trim();
-  var skillStatus = document.querySelector('#skill-status');
+  const title = document
+    .querySelector('input[name="skill-title"]')
+    .value.trim();
+  var skillStatus = document.querySelector("#skill-status");
   const status = skillStatus.options[skillStatus.selectedIndex].text;
 
   const id = window.location.toString().split("/")[
@@ -16,7 +31,7 @@ async function editFormHandler(event) {
     method: "PUT",
     body: JSON.stringify({
       title,
-      status
+      status,
     }),
     headers: {
       "Content-Type": "application/json",
@@ -31,6 +46,6 @@ async function editFormHandler(event) {
 }
 
 // event listener
-document.querySelector('.edit-skill-form').addEventListener('submit', editFormHandler);
-
-
+document
+  .querySelector(".edit-skill-form")
+  .addEventListener("submit", editFormHandler);
