@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Skills  } = require('../models');
 
-//homepage route still needs work
+//homepage route
 router.get("/", (req, res) => {
   Skills.findAll()
   .then(dbSkillsData => {

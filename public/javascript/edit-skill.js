@@ -1,5 +1,4 @@
 // form handler for editing a skill
-// need to work on this
 
 // Retains status from whichever column it was originally in on edit page
 const status = document.querySelector("input").getAttribute("old-status");

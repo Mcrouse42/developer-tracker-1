@@ -42,7 +42,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// put request - edit skill - maybe?
+// put request - edit skill
 router.put('/api/skill/:id', (req, res) => {
     // pass session id along with all destructured properties on req.body
       Skills.update(
@@ -72,7 +72,7 @@ router.put('/api/skill/:id', (req, res) => {
 
 // delete skill
 // need to add withAuth as param, and if (req.session) before function
-router.delete('/skill/:id', (req, res) => {
+router.delete('/api/skill/:id', (req, res) => {
   Skills.destroy({
     where: {
       id: req.params.id

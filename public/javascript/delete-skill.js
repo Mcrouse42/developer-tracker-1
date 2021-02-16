@@ -1,2 +1,25 @@
 // form handler for deleting a skill 
-// event listener
+
+async function deleteFormHandler(event) {
+    event.preventDefault();
+  
+    const id = window.location.toString().split("/")[
+      window.location.toString().split("/").length - 1
+    ];
+  
+    const response = await fetch(`/api/skill/${id}`, {
+      method: "DELETE"
+    });
+  
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+      alert(response.statusText);
+    }
+  }
+  
+  // event listener
+  document
+    .querySelector(".delete-skill-btn")
+    .addEventListener("click", deleteFormHandler);
+  
