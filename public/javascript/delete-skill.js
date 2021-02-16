@@ -12,6 +12,7 @@ async function deleteFormHandler(event) {
     });
   
     if (response.ok) {
+    window.alert("Skill deleted!")
       document.location.replace("/");
     } else {
       alert(response.statusText);

@@ -39,6 +39,7 @@ async function editFormHandler(event) {
   });
 
   if (response.ok) {
+      window.alert("Skill updated!")
     document.location.replace("/");
   } else {
     alert(response.statusText);
