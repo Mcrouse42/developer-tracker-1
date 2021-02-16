@@ -12,7 +12,7 @@ async function editFormHandler(event) {
     window.location.toString().split("/").length - 1
   ];
 
-  const response = await fetch(`/api/skills/${id}`, {
+  const response = await fetch(`/api/skill/${id}`, {
     method: "PUT",
     body: JSON.stringify({
       title,
