@@ -10,25 +10,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-<body>
-    <div class="wrapper">
+<body class="has-background-white-ter">
+    <div class="container">
         <header>
-            <h1>
-                <a href="/">Developer Tracker</a>
-            </h1>
-            <nav>
-                {{#if loggedIn}}
-                <button id="logout" class="btn-no-style">logout</button>
-                {{else}}
-                <a href="/login">Login</a>
-                {{/if}}
+            <nav class="navbar has-background-info">
+                <div class="navbar-brand">
+                    <div class="navbar-item">
+                    <h1>
+                        <a href="/" class="has-text-black-ter has-text-weight-bold">Developer Tracker</a>
+                    </h1>
+                        <div class="navbar-item">
+                            {{#if loggedIn}}
+                            <button id="logout" class="btn-no-style">logout</button>
+                            {{else}}
+                            <a href="/login" class="has-text-black-ter">Login/Signup</a>
+                            {{/if}}
+                        </div>
+                </div>
             </nav>
         </header>
         <main>
             {{{ body }}}
         </main>
-        <footer>
-            Thanks for visiting!
+        <footer class="has-text-weight-bold has-text-black-ter has-background-info">
+            Developed by Zoe King and Matthew Crouse 
         </footer>
     </div>
     {{#if loggedIn}}
