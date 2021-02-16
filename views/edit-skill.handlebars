@@ -1,5 +1,5 @@
-<h1>Edit Skill: {{skill.title}}</h1>
-<div class="box">
+<h1 class="has-text-weight-bold">Edit Skill:</h1>
+<div class="box has-background-grey-lighter">
     <form class="edit-skill-form">
         <input class="input" type="text" old-status={{skill.status}} name="skill-title" value="{{skill.title}}">
         <select name="skill-status" id="skill-status" name="skill-status">
@@ -7,11 +7,11 @@
             <option id="IP" value="3">In Progress</option>
             <option id="MA" value="1" selected="selected">Mastered</option>
         </select>
-        <input type="submit" value="Update Skill" id="submit">
+        <input type="submit" value="Update Skill" id="submit" class="has-background-info">
     </form>
 </div>
 
-<button id="delete-skill">Delete Skill</button>
+<button id="delete-skill" class="has-background-info">Delete Skill</button>
 
 
 {{!-- add links to javascript files here! --}}
