@@ -1,92 +1,4 @@
 <ol class="skill-block">
-    {{!-- Card section, not sure if it will work?
-    </div>
-    <div class="card">
-        <header class="card-header">
-            <p class="card-header-title">
-                To Be Learned
-            </p>
-            <button class="card-header-icon" aria-label="more options">
-                <span class="icon">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-            </button>
-        </header>
-        <div class="card-content">
-            <div class="content">
-                <div>
-                    <textarea class="textarea is-danger" placeholder=""></textarea>
-                </div>
-                <time datetime=></time>
-            </div>
-        </div>
-        <footer class="card-footer">
-            <a href="#" class="card-footer-item">Change to In Progress</a>
-            <a href="#" class="card-footer-item">Save</a>
-            <a href="#" class="card-footer-item">Edit</a>
-            <a href="#" class="card-footer-item">Delete</a>
-        </footer>
-    </div>
-    <div>
-        <br>
-        <br>
-        <br>
-    </div>
-    <div class="card">
-        <header class="card-header">
-            <p class="card-header-title">
-                In Progress
-            </p>
-            <button class="card-header-icon" aria-label="more options">
-                <span class="icon">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-            </button>
-        </header>
-        <div class="card-content">
-            <div class="content">
-                <div>
-                    <textarea class="textarea is-danger" placeholder=""></textarea>
-                </div>
-                <time datetime=></time>
-            </div>
-        </div>
-        <footer class="card-footer">
-            <a href="#" class="card-footer-item">Change to Mastered</a>
-            <a href="#" class="card-footer-item">Save</a>
-            <a href="#" class="card-footer-item">Edit</a>
-            <a href="#" class="card-footer-item">Delete</a>
-        </footer>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="card">
-        <header class="card-header">
-            <p class="card-header-title">
-                Mastered
-            </p>
-            <button class="card-header-icon" aria-label="more options">
-                <span class="icon">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-            </button>
-        </header>
-        <div class="card-content">
-            <div class="content">
-                <div>
-                    <textarea class="textarea is-danger" placeholder="Danger textarea"></textarea>
-                </div>
-                <time datetime=></time>
-            </div>
-        </div>
-        <footer class="card-footer">
-            <a href="#" class="card-footer-item">Congratulations! Don't change a thing.</a>
-            <a href="#" class="card-footer-item">Edit</a>
-            <a href="#" class="card-footer-item">Delete</a>
-        </footer>
-    </div> --}}
-    {{!-- Might need to use columns instead? --}}
     <div class="columns">
         <div class="column is-narrow-mobile">
             <h1 class="title has-text-weight-bold has-text-black-ter">Add New Skill</h1>
@@ -97,12 +9,12 @@
                     <option value="2">In Progress</option>
                     <option value="1">Mastered</option>
                 </select></br>
-                <input type="submit" value="Add Skill" id="submit" class="has-background-info">
+                <input type="submit" value="Add Skill" id="submit" class="has-background-info-dark has-text-warning-light">
             </form>
         </div>
         <div class="column is-narrow-mobile has-text-centered">
             <div class="box has-background-info-dark">
-                <h1 class="title has-text-weight-bold has-text-black-ter">To Be Learned</h1>
+                <h1 class="title has-text-weight-bold has-text-white-ter">To Be Learned</h1>
                 <div class="skills">
                     {{#each skills}}
                     {{#ifEquals status "To Be Learned"}}
@@ -114,7 +26,7 @@
         </div>
         <div class="column is-narrow-mobile has-text-centered">
             <div class="box has-background-info-dark">
-                <h1 class="title has-text-weight-bold has-text-black-ter">In Progress</h1>
+                <h1 class="title has-text-weight-bold has-text-white-ter">In Progress</h1>
                 <div class="skills">
                     {{#each skills}}
                     {{#ifEquals status "In Progress"}}
@@ -126,7 +38,7 @@
         </div>
         <div class="column is-narrow-mobile has-text-centered">
             <div class="box has-background-info-dark">
-                <h1 class="title has-text-weight-bold has-text-black-ter">Mastered</h1>
+                <h1 class="title has-text-weight-bold has-text-white-ter">Mastered</h1>
                 <div class="skills">
                     {{#each skills}}
                     {{#ifEquals status "Mastered"}}
@@ -136,9 +48,6 @@
                 </div>
             </div>
         </div>
-        {{!--
-        <script src="/javascript/status.js"></script> --}}
-
 </ol>
 
 <script src="/javascript/add-skill.js"></script>
