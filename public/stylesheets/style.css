@@ -70,6 +70,7 @@ form label {
   min-height: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: -50px;
   display: flex;
   flex-direction: column;
 }
@@ -126,7 +127,7 @@ main {
 
 footer {
   border-top: 1px solid #ccc;
-  display: flex;
+  /* display: flex; */
   /* justify-content: center; */
   padding: 1%;
   font-size: 110%;
