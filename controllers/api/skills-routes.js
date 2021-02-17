@@ -30,7 +30,8 @@ router.get('/skill/:id', (req, res) => {
 
 // post new skill
 // need to add withAuth as param, and if (req.session) before function
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
+  if (req.session) {
     Skills.create({
         title: req.body.title,
         status: req.body.status
@@ -40,10 +41,12 @@ router.post('/', (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
+  }
 });
 
 // put request - edit skill
-router.put('/api/skill/:id', (req, res) => {
+router.put('/api/skill/:id', withAuth, (req, res) => {
+  if (req.session) {
     // pass session id along with all destructured properties on req.body
       Skills.update(
           {
@@ -67,12 +70,14 @@ router.put('/api/skill/:id', (req, res) => {
           console.log(err);
           res.status(500).json(err);
         });
+      }
     });
  
 
 // delete skill
 // need to add withAuth as param, and if (req.session) before function
-router.delete('/api/skill/:id', (req, res) => {
+router.delete('/api/skill/:id', withAuth, (req, res) => {
+  if (req.session) {
   Skills.destroy({
     where: {
       id: req.params.id
@@ -89,6 +94,7 @@ router.delete('/api/skill/:id', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+  }
 });
 
 // route to edit skills
