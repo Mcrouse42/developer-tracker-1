@@ -43,7 +43,7 @@ textarea {
   min-height: 100%;
   /* max-width: 1200px; */
   margin: auto;
-  margin-bottom: 150px;
+  margin-bottom: 200px;
   display: flex;
   flex-direction: column;
 }
