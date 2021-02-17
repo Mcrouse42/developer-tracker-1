@@ -68,9 +68,9 @@ form label {
 .wrapper {
   width: 100%;
   min-height: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-bottom: -50px;
+  /* max-width: 1200px; */
+  margin: auto;
+  margin-bottom: 0px;
   display: flex;
   flex-direction: column;
 }
