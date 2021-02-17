@@ -9,15 +9,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-
 <body class="has-background-white-ter">
-    <div class="container">
-        <header>
             <nav class="navbar has-background-info-dark">
                 <div class="navbar-brand">
                     <div class="navbar-item">
                     <h1>
-                        <a href="/" class="has-text-white-ter has-text-weight-bold">Developer Tracker</a>
+                        <a href="/" class="has-text-white-ter has-text-weight-bold is-size-3">Developer Tracker</a>
                     </h1>
                         <div class="navbar-item">
                             {{#if loggedIn}}
@@ -28,14 +25,15 @@
                         </div>
                 </div>
             </nav>
-        </header>
         <main>
             {{{ body }}}
         </main>
+        <br>
+        <br>
+        <br>
         <footer class="has-text-weight-bold has-text-white-ter has-background-info-dark">
             Developed by Zoe King and Matthew Crouse 
         </footer>
-    </div>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
