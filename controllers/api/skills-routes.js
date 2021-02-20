@@ -5,8 +5,12 @@ const withAuth = require('../../utils/auth');
 const { post } = require('./user-routes');
 
 // get all skills
-router.get('/skill', (req, res) => {
-    Skills.findAll()
+router.get('/skill', withAuth, (req, res) => {
+    Skills.findAll({
+      where: {
+        user_id: req.session.user_id
+      }
+    })
     .then(dbSkillsData => res.json(dbSkillsData))
     .catch(err => {
         console.log(err);
@@ -34,7 +38,8 @@ router.post('/', withAuth, (req, res) => {
   if (req.session) {
     Skills.create({
         title: req.body.title,
-        status: req.body.status
+        status: req.body.status,
+        user_id: req.session.user_id
     })
     .then(dbSkillsData => res.json(dbSkillsData))
     .catch(err => {

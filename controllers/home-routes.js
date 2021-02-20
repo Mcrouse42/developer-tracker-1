@@ -1,16 +1,20 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Skills  } = require('../models');
+const withAuth = require('../utils/auth');
 
 //homepage route
-router.get("/", (req, res) => {
-  Skills.findAll()
+router.get("/", withAuth, (req, res) => {
+  Skills.findAll({
+    where: {
+      user_id: req.session.user_id
+    }
+  })
   .then(dbSkillsData => {
     const skills = dbSkillsData.map(skill => skill.get({ plain: true }));
-    res.render("homepage", {
-    skills,
-    // created_at: new Date(),
-    loggedIn: req.session.loggedIn
+    res.render('homepage', {
+      skills,
+      loggedIn: req.session.loggedIn
     });
   })
   .catch(err => {
