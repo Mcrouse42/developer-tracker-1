@@ -4,7 +4,7 @@ const homeRoutes = require('./home-routes.js');
 const skillRoutes = require('./api/skills-routes');
 
 router.use('/api', apiRoutes);
-router.use('/', homeRoutes);
+router.use(homeRoutes);
 router.use('/', skillRoutes);
 
 

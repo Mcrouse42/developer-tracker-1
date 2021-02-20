@@ -53,17 +53,6 @@ Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
 
 
 
-app.get('/', function(req, res) {
-  Skills.findAll()
-  .then(dbSkillsData => {
-    const data = dbSkillsData.map(skill => skill.get({ plain: true }));
-    res.render("homepage", {
-    skills: data,
-    loggedIn: req.session.loggedIn
-    });
-  })
-})
-
 // turn on routes
 app.use(routes);
 

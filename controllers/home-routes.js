@@ -12,12 +12,11 @@ router.get("/", withAuth, (req, res) => {
   })
   .then(dbSkillsData => {
     const skills = dbSkillsData.map(skill => skill.get({ plain: true }));
-    // res.status(500).json(skills);
-    // res.render('homepage', {
-    //   skills,
-    //   loggedIn: req.session.loggedIn,
-    //   id: req.session.user_id
-    // });
+    res.render('homepage', {
+      skills,
+      loggedIn: req.session.loggedIn,
+      id: req.session.user_id
+    });
   })
   .catch(err => {
     console.log(err);
