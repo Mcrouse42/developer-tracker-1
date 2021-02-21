@@ -33,19 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// handlebars helpers
-// Handlebars.registerHelper('reverseWord', function(value){
-//   var reversedWord = value.split("").reverse().join("");
-//   return reversedWord;
-// });
-
-// app.get('/', function(req, res) {
-//   var data = {
-//     myWord: 'Wombat',
-//     reallyImportantNumber: 65356
-//   };
-//   res.render('homepage', data);
-// });
 
 Handlebars.registerHelper('ifEquals', function(arg1, arg2, options) {
   return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
