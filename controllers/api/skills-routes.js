@@ -33,7 +33,6 @@ router.get('/skill/:id', (req, res) => {
 });
 
 // post new skill
-// need to add withAuth as param, and if (req.session) before function
 router.post('/', withAuth, (req, res) => {
   if (req.session) {
     Skills.create({
@@ -80,7 +79,6 @@ router.put('/api/skill/:id', withAuth, (req, res) => {
  
 
 // delete skill
-// need to add withAuth as param, and if (req.session) before function
 router.delete('/api/skill/:id', withAuth, (req, res) => {
   if (req.session) {
   Skills.destroy({
@@ -103,7 +101,6 @@ router.delete('/api/skill/:id', withAuth, (req, res) => {
 });
 
 // route to edit skills
-// need to add withAuth as param, and if (req.session) before function
 router.get('/edit/:id', (req, res) => {
     Skills.findByPk(req.params.id, {
         attributes: [
